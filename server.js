@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 // Base parsing - need to update
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(__dirname));
 app.use('/', htmlRoutes);
 
 // Listener - need to update
