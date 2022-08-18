@@ -1,5 +1,5 @@
 # Note Taker
-## Code quiz with highscores
+## Website utilizing express to create, view, and delete notes
 <br>
 
 ### Once opening the URL, you will be taken to a landing page with a title of "Note Taker", a description of "Take notes with Express", and a button that says "Get Started."
