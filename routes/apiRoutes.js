@@ -2,11 +2,13 @@
 // const path = require('path');
 const router = require('express').Router();
 const {createNote, getNoteById} = require('../lib/notes');
-let {result} = require('../db/db.json');
+let {notes} = require('../db/db.json');
 
 // will need to adjust to pull note info from db file
 router.get('/notes', (req, res) => {
-    res.json(result);
+    let results = notes;
+    console.log("This is results", results);
+    res.json(results);
 });
 
 router.post('/notes', (req, res) => {
