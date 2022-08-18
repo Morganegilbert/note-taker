@@ -12,8 +12,9 @@ router.get('/notes', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
+    console.log("This is my request", req);
     req.body.id = Date.now().toString();
-    const note = createNote(req.body, result)
+    const note = createNote(req.body, notes)
     res.json(note);
 });
 
