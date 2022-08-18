@@ -6,10 +6,6 @@ router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-// router.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../public/notes.html'));
-// });
-
 router.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/notes.html'));
 });
@@ -17,20 +13,6 @@ router.get('/notes', (req, res) => {
 router.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
-
-// router.post('/', (req, res) => {
-//   res.sendStatus('Create Note')
-// });
-
-// router.get('/notes', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../public/notes.html'));
-// });
-
-
-
-// router.get('/notes/:id', (req, res) =>{
-//   res.json(notes[req.params.id])
-// })
 
 // Add function for create note
 function getNote() {};
