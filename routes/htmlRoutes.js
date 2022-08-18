@@ -1,14 +1,18 @@
-const fs = require("fs");
+// const fs = require("fs");
 const path = require('path');
 const router = require('express').Router();
 
-// router.get('/index.html', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../public/index.html'));
-// });
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 // router.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../public/notes.html'));
 // });
+
+router.get('/notes', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/notes.html'));
+});
 
 router.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
@@ -18,13 +22,11 @@ router.get('*', (req, res) => {
 //   res.sendStatus('Create Note')
 // });
 
-router.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/notes.html'));
-});
+// router.get('/notes', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../public/notes.html'));
+// });
 
-router.get('/api/notes', (req, res) => {
-  // res.
-});
+
 
 // router.get('/notes/:id', (req, res) =>{
 //   res.json(notes[req.params.id])
