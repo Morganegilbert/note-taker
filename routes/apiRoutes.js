@@ -1,7 +1,7 @@
 // const fs = require("fs");
 // const path = require('path');
 const router = require('express').Router();
-const {getNoteById, createNote} = require('../lib/notes');
+const {createNote, getNoteById} = require('../lib/notes');
 let {result} = require('../db/db.json');
 
 // will need to adjust to pull note info from db file
@@ -10,8 +10,9 @@ router.get('/notes', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
-    req.body.id = animals.length.toString();
+    req.body.id = Date.now().toString();
     const note = createNote(req.text, result)
+    res.json(note);
 });
 
 router.delete('*', (req, res) => {
