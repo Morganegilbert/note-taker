@@ -11,13 +11,13 @@ router.get('/notes', (req, res) => {
 
 router.post('/notes', (req, res) => {
     req.body.id = Date.now().toString();
-    const note = createNote(req.text, result)
+    const note = createNote(req.body, result)
     res.json(note);
 });
 
-router.delete('*', (req, res) => {
+// router.delete('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../public/index.html'));
-});
+// });
 
 router.param("id", (req, res, next, id) => {
     console.log(id)

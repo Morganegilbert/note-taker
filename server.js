@@ -1,15 +1,13 @@
 // Required constants
 const express = require('express');
-const fs = require("fs"); // move to routes, will have fs function there
 const htmlRoutes = require('./routes/htmlRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 
-
-// Initialize express app annd port
+// Initialize express app and port
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Base parsing - need to update
+// Base parsing 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname));
@@ -17,7 +15,7 @@ app.use('/', htmlRoutes);
 app.use('/', apiRoutes);
 
 
-// Listener - need to update
+// Listener
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
   });
